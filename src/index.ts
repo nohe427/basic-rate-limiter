@@ -5,6 +5,7 @@ const valkey = new Valkey(6379);
 
 const incrementKey = async (key: string) => {
     console.log('incrementing', key);
+    // use incrby to increment by number other than 1
     valkey.incr(key, (err, reply) => {
         if (err) {
             throw new Error(err.message);
